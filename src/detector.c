@@ -354,6 +354,8 @@ void train_detector(char *datacfg, char *cfgfile, char *weightfile, int *gpus, i
         // set initial value, even if resume training from 10000 iteration
         if (avg_time < 0) avg_time = time_remaining;
         else avg_time = alpha_time * time_remaining + (1 -  alpha_time) * avg_time;
+
+        printf("avg_loss %d, max_img_loss %d, iteration %d, net.max_batches %d, mean_average_precision %d, avg_time %d", avg_loss, max_img_loss, iteration, net.max_batches, mean_average_precision, avg_time)
 #ifdef OPENCV
         draw_train_loss(windows_name, img, img_size, avg_loss, max_img_loss, iteration, net.max_batches, mean_average_precision, draw_precision, "mAP%", dont_show, mjpeg_port, avg_time);
 #endif    // OPENCV
