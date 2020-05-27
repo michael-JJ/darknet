@@ -34,9 +34,9 @@ def show_message(message, stop=False):
 
 def parse_args():
     parser = argparse.ArgumentParser(description="training log parser by DeepKeeper ")
-    parser.add_argument('--source-dir', dest='source_dir', type=str, default='./',
+    parser.add_argument('--source-dir', dest='source_dir', type=str, default='/drivebackup',
                         help='the log source directory')
-    parser.add_argument('--save-dir', dest='save_dir', type=str, default='./',
+    parser.add_argument('--save-dir', dest='save_dir', type=str, default='/drivebackup',
                         help='the directory to be saved')
     parser.add_argument('--csv-file', dest='csv_file', type=str, default="",
                         help='training log file')
